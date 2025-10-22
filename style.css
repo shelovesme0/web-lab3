@@ -1,0 +1,132 @@
+/* --- ВАШІ ОРИГІНАЛЬНІ СТИЛІ --- */
+.container {
+  display: grid;
+  grid-template-areas:
+    "block1 block1 block2"
+    "block3 block4 block2"
+    "block3 block5 block2"
+    "block6 block6 block6";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 5px;
+  min-height: 100vh;
+}
+
+.block {
+  border: 1px solid #000;
+  padding: 10px;
+  background-color: white;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.block1 {
+  grid-area: block1;
+  background-color: #cce0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.block2 {
+  grid-area: block2;
+  background-color: #e6f0da;
+}
+
+.block3 {
+  grid-area: block3;
+  background-color: #fde6d5;
+}
+
+.block4 {
+  grid-area: block4;
+  background-color: #fde6d5;
+}
+
+.block5 {
+  grid-area: block5;
+  background-color: #fff;
+}
+
+.block6 {
+  grid-area: block6;
+  background-color: #cce0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.block1 h2, .block6 h2 {
+  display: inline-block;      
+  padding: 10px 20px;         
+  border: 1px solid #000;     
+  border-radius: 0;            
+  background-color: #fff;      
+  text-align: center;         
+}
+
+.block1 h2,
+.block1 p {
+  margin: 0;                      
+}
+
+.block1 p {
+  font-size: 1.2em;               
+}
+
+.block2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.block2 li {
+  margin: 8px 0;
+}
+
+.block2 a {
+  text-decoration: none;
+  color: #004080;
+  font-weight: bold;
+}
+
+.block2 a:hover {
+  color: #ff6600;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 5px;
+  height: auto;
+}
+
+/* --- КОД ДЛЯ АДАПТАЦІЇ (ДОДАНО В КІНЕЦЬ ФАЙЛУ) --- */
+@media (max-width: 768px) {
+  .container {
+    /* Перебудовуємо сітку в одну колонку */
+    grid-template-columns: 1fr;
+    
+    /* Оновлюємо імена областей для вертикального розташування */
+    grid-template-areas:
+      "block1"
+      "block2"
+      "block3"
+      "block4"
+      "block5"
+      "block6";
+      
+    min-height: auto; /* Вимикаємо мінімальну висоту для мобільних */
+  }
+
+  /* Робимо елементи у хедері та футері вертикальними */
+  .block1, .block6 {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px; /* Додаємо відступ між елементами */
+  }
+  
+  .block1 h2, .block6 h2 {
+    display: block; /* Заголовки на всю ширину */
+  }
+}
