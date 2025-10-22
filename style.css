@@ -1,4 +1,3 @@
-/* --- ВАШІ ОРИГІНАЛЬНІ СТИЛІ --- */
 .container {
   display: grid;
   grid-template-areas:
@@ -101,13 +100,11 @@ img {
   height: auto;
 }
 
-/* --- КОД ДЛЯ АДАПТАЦІЇ (ДОДАНО В КІНЕЦЬ ФАЙЛУ) --- */
 @media (max-width: 768px) {
   .container {
-    /* Перебудовуємо сітку в одну колонку */
+
     grid-template-columns: 1fr;
     
-    /* Оновлюємо імена областей для вертикального розташування */
     grid-template-areas:
       "block1"
       "block2"
@@ -116,17 +113,16 @@ img {
       "block5"
       "block6";
       
-    min-height: auto; /* Вимикаємо мінімальну висоту для мобільних */
+    min-height: auto;
   }
 
-  /* Робимо елементи у хедері та футері вертикальними */
   .block1, .block6 {
     flex-direction: column;
     text-align: center;
-    gap: 15px; /* Додаємо відступ між елементами */
+    gap: 15px;
   }
   
   .block1 h2, .block6 h2 {
-    display: block; /* Заголовки на всю ширину */
+    display: block;
   }
 }
